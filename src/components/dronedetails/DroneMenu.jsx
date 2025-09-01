@@ -196,13 +196,23 @@ const DroneMenu = ({ droneData, selectedDrone, setSelectedDrone }) => {
    * Pattern: Component Composition - Reusable collapse toggle
    * @param {number} size - Icon size
    */
-  const CollapseButton = ({ size = 20 }) => (
+  const CollapseButton = ({ size, isMobile }) => (
     <button
       onClick={() => setCollapsed(!collapsed)}
       className="text-gray-400 hover:text-white transition-colors p-1"
       aria-label={collapsed ? "Expand menu" : "Collapse menu"}
     >
-      {collapsed ? <ChevronsUp size={size} /> : <ChevronsDown size={size} />}
+      {isMobile ? (
+        collapsed ? (
+          <ChevronsUp size={size} />
+        ) : (
+          <ChevronsDown size={size} />
+        )
+      ) : collapsed ? (
+        <ChevronsDown size={size} />
+      ) : (
+        <ChevronsUp size={size} />
+      )}
     </button>
   );
 
@@ -251,7 +261,7 @@ const DroneMenu = ({ droneData, selectedDrone, setSelectedDrone }) => {
         <div className="flex items-center justify-between p-4 border-b border-gray-700 flex-shrink-0">
           <h2 className="text-white font-semibold text-sm">DRONE FLYING</h2>
           <div className="flex items-center space-x-2">
-            <CollapseButton size={18} />
+            <CollapseButton size={18} isMobile={true} />
             <button
               onClick={() => setIsOpen(false)}
               className="text-gray-400 hover:text-white transition-colors p-1"
@@ -318,7 +328,7 @@ const DroneMenu = ({ droneData, selectedDrone, setSelectedDrone }) => {
         {/* Pattern: Header Pattern - Consistent header design */}
         <div className="flex items-center justify-between p-4 border-b border-gray-700 cursor-pointer">
           <h2 className="text-white font-semibold">DRONE FLYING</h2>
-          <CollapseButton size={20} />
+          <CollapseButton size={20} isMobile={false} />
         </div>
 
         {/* Desktop Content Area */}

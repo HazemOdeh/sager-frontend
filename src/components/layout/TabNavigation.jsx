@@ -20,11 +20,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // Configuration constants for maintainability
 const NAVIGATION_CONFIG = {
   BRAND_COLOR: "#F9000E",
-  MOBILE_BREAKPOINT: "md",
   TRANSITION_DURATION: "200ms",
-  Z_INDEX: {
-    MOBILE: 40,
-  },
 };
 
 // Tab configuration - easily extensible
@@ -212,7 +208,7 @@ const TabNavigation = () => {
       {/* Mobile: Bottom Navigation Bar */}
       {/* Pattern: Responsive Design - Mobile-specific navigation layout */}
       <nav
-        className={`${NAVIGATION_CONFIG.MOBILE_BREAKPOINT}:hidden fixed bottom-0 left-0 right-0 z-${NAVIGATION_CONFIG.Z_INDEX.MOBILE} bg-black border-t border-gray-800`}
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-black border-t border-gray-800"
         role="navigation"
         aria-label="Main navigation"
       >
@@ -226,7 +222,7 @@ const TabNavigation = () => {
       {/* Desktop: Side Navigation Panel */}
       {/* Pattern: Responsive Design - Desktop-specific navigation layout */}
       <nav
-        className={`hidden ${NAVIGATION_CONFIG.MOBILE_BREAKPOINT}:flex sticky top-16 left-0 flex-col h-[calc(100vh-4rem)] w-20 lg:w-24 xl:w-28 bg-black`}
+        className="hidden md:flex flex-col h-full w-20 lg:w-24 xl:w-28 bg-black"
         role="navigation"
         aria-label="Main navigation"
       >
