@@ -322,33 +322,6 @@ Backend (Socket.IO Server)
 
 ---
 
-## ⚖️ Trade-offs & Decisions
-
-### ✅ Strengths
-- **Real-time Updates**: Instant drone tracking via WebSockets
-- **Responsive Design**: Works seamlessly on all devices
-- **Modular Architecture**: Easy to maintain and extend
-- **Type Safety**: Prop validation and consistent data structures
-- **Performance**: Optimized rendering with React best practices
-
-### ⚠️ Considerations
-- **No Persistence**: In-memory state, data lost on page refresh
-- **Single Backend**: Hardcoded Socket.IO URL
-- **No Authentication**: Open access to drone data
-- **Limited Error Handling**: Basic error states only
-
-### 🔄 Future Improvements
-- Add Redux or Zustand for global state management
-- Implement authentication and authorization
-- Add drone control capabilities
-- Historical flight data persistence
-- Advanced filtering and search
-- Real-time alerts and notifications
-- Multiple map view options
-- Export and reporting features
-
----
-
 ## 🧪 Development Guidelines
 
 ### Code Quality
@@ -371,16 +344,6 @@ Backend (Socket.IO Server)
 
 ---
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
 ## 📄 License
 
 This project is private and proprietary.
@@ -399,12 +362,6 @@ This project is private and proprietary.
 - **Socket.IO** for real-time communication
 - **Tailwind CSS** for rapid UI development
 - **React Team** for the amazing library
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions, please open an issue in the GitHub repository.
 
 ---
 
